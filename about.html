@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>详细信息</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #d7e3fc 0%, #ccdbfd 100%);
+            padding: 40px 20px;
+        }
+        .box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        .top-img {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
+        .title {
+            font-size: 28px;
+            color: #2b7bdd;
+            margin-bottom: 26px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e8f3ff;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 2.1;
+        }
+        .content li {
+            margin: 10px 0;
+        }
+        .content strong {
+            color: #2b7bdd;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 14px 30px;
+            background: #2b7bdd;
+            color: #fff;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .back:hover {
+            background: #2169c4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <img class="top-img" src="https://picsum.photos/id/1076/900/200" alt="详情顶部图">
+    
+    <h2 class="title" id="title">加载中...</h2>
+    <div class="content" id="content"></div>
+    
+    <a href="index.html" class="back">← 返回主页</a>
+</div>
+
+<script>
+    const params = new URLSearchParams(location.search);
+    const type = params.get('type');
+
+    const data = {
+        school: {
+            title: "🏫 在校基础信息",
+            content: `
+<ul>
+    <li><strong>姓名：</strong>何俊毅</li>
+    <li><strong>年龄：</strong>21周岁</li>
+    <li><strong>性别：</strong>男</li>
+    <li><strong>学校：</strong>昆明学院</li>
+    <li><strong>学院：</strong>信息工程学院</li>
+    <li><strong>专业：</strong>数据科学与大数据技术</li>
+    <li><strong>学号：</strong>23110941034</li>
+    <li><strong>学历：</strong>本科在读</li>
+    <li><strong>政治面貌：</strong>共青团员</li>
+    <li><strong>就读状态：</strong>正常在校学习</li>
+</ul>`
+        },
+        skill: {
+            title: "💻 专业技能掌握程度",
+            content: `
+<ul>
+    <li><strong>Python 编程：</strong>熟练语法、函数、文件操作、异常处理</li>
+    <li><strong>Pandas 数据分析：</strong>数据清洗、筛选、分组、透视、统计分析</li>
+    <li><strong>Matplotlib 可视化：</strong>折线图、柱状图、饼图、热力图等</li>
+    <li><strong>MySQL 数据库：</strong>建表、增删改查、多表联查、聚合查询</li>
+    <li><strong>HTML+CSS：</strong>静态网页制作、布局、样式美化</li>
+    <li><strong>Git & GitHub：</strong>代码提交、版本管理、项目托管</li>
+    <li><strong>工具：</strong>VS Code、Jupyter、Anaconda</li>
+    <li><strong>项目能力：</strong>数据分析全流程、课程设计、个人主页开发</li>
+</ul>`
+        },
+        hobby: {
+            title: "🎧 兴趣爱好与个人特点",
+            content: `
+<ul>
+    <li><strong>编程实战：</strong>写代码、做小项目、练算法</li>
+    <li><strong>数据分析：</strong>数据集探索、可视化图表制作</li>
+    <li><strong>技术学习：</strong>看教程、读文章、学新工具</li>
+    <li><strong>整理笔记：</strong>系统化梳理知识</li>
+    <li><strong>音乐：</strong>听歌放松、缓解压力</li>
+    <li><strong>运动：</strong>跑步、健身，保持状态</li>
+    <li><strong>纪录片：</strong>科技、历史、自然类</li>
+    <li><strong>性格：</strong>认真踏实、耐心负责、团队协作良好</li>
+</ul>`
+        },
+        course: {
+            title: "📖 主修核心课程",
+            content: `
+<ul>
+    <li><strong>公共基础课：</strong>高等数学、线性代数、概率论与数理统计、大学英语、思政系列课程</li>
+    <li><strong>专业基础课：</strong>Python程序设计、数据结构与算法、计算机网络、操作系统基础</li>
+    <li><strong>核心专业课：</strong>数据库原理及应用、数据分析与数据可视化、统计学原理</li>
+    <li><strong>进阶专业课：</strong>机器学习基础、大数据技术概论、数据挖掘、多元统计分析</li>
+    <li><strong>实践类课程：</strong>课程实验、综合实训、专业见习、数据分析综合设计</li>
+    <li><strong>拓展类课程：</strong>人工智能导论、云计算基础、数据仓库与数据集成</li>
+</ul>`
+        },
+        myself: {
+            title: "📝 个人综合评价",
+            content: `
+<ul>
+    <li>学习态度端正，上课认真听讲，课后主动练习，专业成绩稳步提升。</li>
+    <li>具备较强的自主学习能力，遇到问题能查阅资料、独立排查并解决。</li>
+    <li>做事细心负责，逻辑清晰，适合数据处理、编程开发类学习与工作。</li>
+    <li>善于沟通交流，团队协作意识强，能高效配合完成小组任务。</li>
+    <li>热爱技术行业，对数据分析有浓厚兴趣，愿意长期深耕学习。</li>
+    <li>生活习惯良好，自律性强，保持积极向上的学习与生活状态。</li>
+    <li>目标明确，未来计划不断提升技术水平，向专业数据岗位方向发展。</li>
+    <li>遵守校纪校规，尊敬师长，团结同学，具有良好的道德品质。</li>
+</ul>`
+        }
+    };
+
+    const info = data[type] || { title: "未找到内容", content: "<p>请从主页进入</p>" };
+    document.getElementById("title").innerText = info.title;
+    document.getElementById("content").innerHTML = info.content;
+</script>
+</body>
+</html>

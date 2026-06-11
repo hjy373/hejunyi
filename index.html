@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>何俊毅 - 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #d7e3fc 0%, #ccdbfd 100%);
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        .banner {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+        .profile {
+            text-align: center;
+            margin-top: -80px;
+            position: relative;
+            z-index: 2;
+        }
+        .avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .profile h1 {
+            font-size: 36px;
+            margin-top: 12px;
+            color: #222;
+        }
+        .profile .info {
+            font-size: 17px;
+            color: #666;
+            margin-top: 6px;
+        }
+        .intro {
+            padding: 30px 40px;
+            line-height: 2;
+            font-size: 16px;
+            color: #333;
+        }
+        .img-row {
+            display: flex;
+            gap: 14px;
+            padding: 0 40px;
+            margin-bottom: 30px;
+        }
+        .img-row img {
+            width: 33%;
+            height: 140px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 40px 40px;
+        }
+        .menu a {
+            background: #f0f6ff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #2b7bdd;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .menu a:hover {
+            background: #2b7bdd;
+            color: #fff;
+            transform: translateY(-4px);
+        }
+        .menu a span {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .contact {
+            background: #f7f9fc;
+            padding: 20px;
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+        }
+        .footer {
+            text-align: center;
+            padding: 26px;
+            font-size: 14px;
+            color: #888;
+            background: #fcfcfc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img class="banner" src="https://picsum.photos/id/1073/1000/260" alt="banner">
+    
+    <div class="profile">
+        <img class="avatar" src="https://picsum.photos/id/1012/160/160" alt="头像">
+        <h1>何俊毅</h1>
+        <p class="info">21岁 | 昆明学院 | 数据科学与大数据技术 | 本科在读</p>
+    </div>
+
+    <div class="intro">
+        本人目前就读于昆明学院数据科学与大数据技术专业，学习态度认真踏实，具备扎实的编程基础与数据分析能力。熟练使用 Python、Pandas、Matplotlib、MySQL、HTML+CSS 等技术，擅长数据处理、可视化分析与网页开发。平时注重实践与总结，乐于通过项目不断提升自己，未来希望在数据领域持续深耕。
+    </div>
+
+    <div class="img-row">
+        <img src="https://picsum.photos/id/180/400/140" alt="学习">
+        <img src="https://picsum.photos/id/96/400/140" alt="代码">
+        <img src="https://picsum.photos/id/160/400/140" alt="数据">
+    </div>
+
+    <div class="menu">
+        <a href="about.html?type=school">
+            <span>🏫</span>在校基础信息
+        </a>
+        <a href="about.html?type=skill">
+            <span>💻</span>专业技能掌握
+        </a>
+        <a href="about.html?type=hobby">
+            <span>🎧</span>兴趣爱好特点
+        </a>
+        <a href="about.html?type=course">
+            <span>📖</span>主修课程
+        </a>
+        <a href="about.html?type=myself">
+            <span>📝</span>个人综合评价
+        </a>
+    </div>
+
+    <div class="contact">
+        📞 18988413536 ｜ 📩 hejunyi_work@163.com ｜ 💻 GitHub: hjy373
+    </div>
+
+    <div class="footer">
+        © 2026 何俊毅 ｜ 个人主页作业展示
+    </div>
+</div>
+
+</body>
+</html>
